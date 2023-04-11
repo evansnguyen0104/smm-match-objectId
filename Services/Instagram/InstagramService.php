@@ -5,7 +5,7 @@ namespace Services\Instagram;
 
 class InstagramService
 {
-    public function reconstructUrl($url)
+    protected function reconstructUrl($url)
     {
         $url_parts = parse_url($url);
         if (isset($url_parts['scheme'])) {

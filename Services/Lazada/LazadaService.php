@@ -6,7 +6,7 @@ namespace Services\Instagram;
 
 class LazadaService
 {
-    public function checkCharExistStr($str, $char)
+    protected function checkCharExistStr($str, $char)
     {
         if (strpos($str, $char) !== false) {
             return true;
@@ -22,13 +22,13 @@ class LazadaService
             preg_match_all($re, $str, $matches, PREG_SET_ORDER, 0);
             if (!isset($matches[0][1])) {
                 return [
-                    'error' => __('Link phải có dạng https://www.lazada.vn/shop/{username_shop}...'),
+                    'error' => 'Link phải có dạng https://www.lazada.vn/shop/{username_shop}...',
                     'status' => 400
                 ];
             }
             if ($this->checkCharExistStr($matches[0][1], "http")) {
                 return [
-                    'error' => __('Link phải có dạng https://www.lazada.vn/shop/{username_shop}...'),
+                    'error' => 'Link phải có dạng https://www.lazada.vn/shop/{username_shop}...',
                     'status' => 400
                 ];
             }
@@ -41,7 +41,7 @@ class LazadaService
             preg_match_all($re, $str, $matches, PREG_SET_ORDER, 0);
             if (!isset($matches[0][1])) {
                 return [
-                    'error' => __('Link phải có dạng https://www.lazada.vn/products/{alias_san_pham}...'),
+                    'error' => 'Link phải có dạng https://www.lazada.vn/products/{alias_san_pham}...',
                     'status' => 400
                 ];
             }
@@ -53,7 +53,7 @@ class LazadaService
         ];
     }
 
-    public function reconstructUrl($url)
+    protected function reconstructUrl($url)
     {
         $url_parts = parse_url($url);
         if (isset($url_parts['scheme'])) {

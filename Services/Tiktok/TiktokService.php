@@ -6,7 +6,7 @@ namespace Services\Tiktok;
 
 class TiktokService
 {
-    public function reconstructUrl($url)
+    protected function reconstructUrl($url)
     {
         $url_parts = parse_url($url);
         if (isset($url_parts['scheme'])) {
