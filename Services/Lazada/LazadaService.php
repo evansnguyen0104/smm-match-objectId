@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Services\Lazada;
+namespace Services\Instagram;
 
 
 class LazadaService

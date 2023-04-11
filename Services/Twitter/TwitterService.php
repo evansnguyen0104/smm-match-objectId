@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Services\Twitter;
+namespace Services\Twitter;
 
 
 class TwitterService

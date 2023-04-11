@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Services\Tiktok;
+namespace Services\Tiktok;
 
 
 class TiktokService
