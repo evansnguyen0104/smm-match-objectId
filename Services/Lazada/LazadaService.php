@@ -100,20 +100,4 @@ class LazadaService
             return $results[1][0];
         return $url;
     }
-
-    public function getValueFromStringUrl($url, $parameter_name)
-    {
-        $parts = parse_url($url);
-        if (isset($parts['query'])) {
-            parse_str($parts['query'], $query);
-            if (isset($query[$parameter_name])) {
-                return $query[$parameter_name];
-            } else {
-                return null;
-            }
-        } else {
-            return null;
-        }
-    }
-
 }
